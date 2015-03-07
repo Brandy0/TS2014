@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--这边的图片大小和发布贰货中图片大小不一样，因为两个界面的cols不同-->
+            <ImageView
+                android:id="@+id/imgQueue"
+                android:layout_width="@dimen/photo_width"
+                android:layout_height="@dimen/photo_height"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/no_media"/>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imgQueueMultiSelected"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:background="@drawable/checkbox_image_bg"
+            android:gravity="center"
+            android:scaleType="center"
+            android:visibility="visible"/>
+    </FrameLayout>
+
+</LinearLayout>

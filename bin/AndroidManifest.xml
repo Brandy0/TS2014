@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.erhuoapp.erhuo"
+    android:versionCode="3"
+    android:versionName="2.0.1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+	 <uses-permission android:name="android.permission.GET_ACCOUNTS" />  
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />  
+	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />  
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />  
+	<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />  
+	<uses-permission android:name="android.permission.BROADCAST_STICKY" />  
+	
+    <!-- 摄像头 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- ###################声明SDK使用的相关权限###################### -->
+    <!-- 检测网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取mac地址作为用户的备用唯一标识 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取用户手机的IMEI，用来唯一的标识用户 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 缓存资源优先存入SDcard -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许应用程序联网，以便向我们的服务器端发送数据 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- QQ、QQ空间所需权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    
+    
+    <!-- android:screenOrientation="portrait" 这个貌似设置在了主Activity上对所有其他界面都有效->错误 -->
+    <!--android:hardwareAccelerated="false" 解决Bitmap too large to be uploaded into a texture
+    http://blog.csdn.net/ta893115871/article/details/9043559-->
+    <application
+        android:name=".ErHuoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="false"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.ActivityMain"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ActivityLoading"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityGuide"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivitySearch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityGoodsSellingInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityGoodsBuyingInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityImageGallery"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityResetPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ActivityBuying"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityBrowser"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityOther"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivitySetting"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityOpinion"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityInfodata"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityPhone"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityChangePassword"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--这里的配置挺重要的，因为有些手机在拍照的时候会发生横竖屏变换，导致当前的activity重新创建-->
+        <activity
+            android:name=".activity.ActivitySelling"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ActivityAuth"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!--自定义的能够从相册图库中选择多张图片的Activity-->
+        <activity android:name="com.luminous.pick.CustomGalleryActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="luminous.ACTION_PICK" />
+                <action android:name="luminous.ACTION_MULTIPLE_PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        
+        <activity
+            android:name=".activity.BaiduMapActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide">
+        </activity>
+        <activity
+            android:name=".activity.BaseActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.CallActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ChatActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide">
+        </activity>
+        <activity
+            android:name=".activity.ImageGridActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide">
+        </activity>
+        <activity
+            android:name=".activity.RecorderVideoActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide">
+        </activity> 
+        <activity
+            android:name=".activity.ShowBigImage"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide" >
+        </activity>
+        <activity
+            android:name=".activity.AlertDialog"
+            android:screenOrientation="portrait" 
+            android:theme="@style/MyDialogStyle">
+        </activity>
+        <activity
+            android:name=".activity.ContextMenu"
+            android:screenOrientation="portrait" 
+            android:theme="@style/MyDialogStyle">
+        </activity>
+         <activity
+            android:name=".activity.ShowVideoActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide">
+        </activity>
+        <activity
+            android:name=".activity.VideoCallActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/horizontal_slide" >
+        </activity>
+        <activity
+            android:name=".activity.VoiceCallActivity"
+            android:screenOrientation="portrait" 
+            android:theme="@style/nornal_style">
+        </activity>
+
+        <!-- 开机自启动服务 -->
+        <receiver android:name="com.easemob.chat.StartServiceReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- 设置环信SDK的appkey，注意name为EASEMOB_APPKEY -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="erhuo#chat" />
+        <!-- 声明环信sdk所需的service -->
+        <service android:name="com.easemob.chat.EMChatService" />
+ 		<!-- 百度地图所需的service -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"
+             />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Hn7mOMtfgjxofifwaAQE9FrL" />
+        
+        <!-- ###################注册SDK使用的Activity###################### -->
+        <!--分享编辑页-->
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <!-- ###################添加UmengAppkey###################### -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="54c8563cfd98c5810e00060c" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="mayigongshe" >
+        </meta-data>
+
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                
+                <data android:scheme="tencent1104169970" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 微信回调activity -->
+        <activity
+            android:name="com.erhuoapp.erhuo.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        
+    </application>
+
+</manifest>

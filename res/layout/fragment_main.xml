@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_red">
+
+    <!--因为出现了java.lang.StackOverflowError，所以精简了一层Layout-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.erhuoapp.erhuo.view.MainViewPager
+            android:id="@+id/viewpager_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!--为了大屏幕显示正确，height调整为70sp-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65sp"
+            android:background="@drawable/main_board">
+
+            <LinearLayout
+                android:id="@+id/linearlayout_main_board_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp">
+
+                <ImageView
+                    android:id="@+id/imageview_main_board_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_board_1_bg"/>
+
+                <TextView
+                    android:id="@+id/textview_main_board_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:text="首页"
+                    android:textColor="@color/main_gray"
+                    android:textSize="@dimen/font_small"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_main_board_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp">
+
+                <ImageView
+                    android:id="@+id/imageview_main_board_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_board_2_bg"/>
+
+                <TextView
+                    android:id="@+id/textview_main_board_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:text="求购"
+                    android:textColor="@color/main_gray"
+                    android:textSize="@dimen/font_small"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_main_board_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/main_board_center_bg"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="1dp"
+                    android:src="@drawable/main_board_center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:text="我要卖"
+                    android:textColor="@color/main_white"
+                    android:textSize="@dimen/font_small"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearlayout_main_board_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="center"
+                android:scaleType="matrix"
+                android:orientation="vertical"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp">
+
+                <ImageView
+                    android:id="@+id/imageview_main_board_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_board_3_bg"/>
+
+                <TextView
+                    android:id="@+id/textview_main_board_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:text="信息"
+                    android:scaleType="matrix"
+                    android:textColor="@color/main_gray"
+                    android:textSize="@dimen/font_small"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearlayout_main_board_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp">
+
+                <ImageView
+                    android:id="@+id/imageview_main_board_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/main_board_4_bg"/>
+
+                <TextView
+                    android:id="@+id/textview_main_board_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:text="个人"
+                    android:textColor="@color/main_gray"
+                    android:textSize="@dimen/font_small"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

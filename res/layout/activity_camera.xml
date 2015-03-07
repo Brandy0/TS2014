@@ -1,0 +1,133 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.activity.ActivityCamera">
+
+    <!--真实内容-->
+    <RelativeLayout
+        android:id="@+id/rl_card_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_red">
+
+        <FrameLayout
+            android:id="@+id/fl_card_topactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageButton
+                android:id="@+id/ib_camera_return"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/camera_return"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/main_bgcolor"
+            android:layout_below="@+id/fl_card_topactions"
+            android:layout_above="@+id/fl_card_buttomactions">
+            <!--android:background="@drawable/round_imageview_bg"-->
+
+            <FrameLayout
+                android:id="@+id/framelayout_camera_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/iv_camera_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@android:color/transparent"
+                android:background="@android:color/transparent"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_card_buttomactions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_camera_gallary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:background="@drawable/image_gallery_bg"/>
+
+                <TextView
+                    android:id="@+id/tv_camera_reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:clickable="true"
+                    android:text="取 消"
+                    android:textStyle="bold"
+                    android:textColor="@color/font_alpha_white"
+                    android:textSize="@dimen/font_large"/>
+
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_camera_takepic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:background="@drawable/camera_bg"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_camera_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:clickable="true"
+                    android:text="确 定"
+                    android:textStyle="bold"
+                    android:textColor="@color/font_alpha_white"
+                    android:textSize="@dimen/font_large"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!--加载等待-->
+    <include layout="@layout/frame_waiting" />
+
+</FrameLayout>

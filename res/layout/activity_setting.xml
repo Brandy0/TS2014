@@ -1,0 +1,387 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgcolor"
+    tools:context="com.erhuoapp.erhuo.activity.ActivitySetting">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--标题部分-->
+        <FrameLayout
+            android:id="@+id/fl_settings_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_title_top"
+            android:paddingBottom="@dimen/padding_title_bottom"
+            android:paddingLeft="@dimen/padding_title_left"
+            android:paddingRight="@dimen/padding_title_right"
+            android:background="@color/main_white">
+
+            <ImageButton
+                android:id="@+id/ib_settings_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_return_bg"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="设　置"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_title"/>
+
+        </FrameLayout>
+
+        <!--分隔符-->
+        <View
+            android:id="@+id/view_settings_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/fl_settings_title"
+            android:background="@color/main_lightred"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_settings_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_settings_divider">
+
+            <!--android:layout_marginTop="10dp"-->
+            <LinearLayout
+                android:id="@+id/ll_settings_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@color/main_white">
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="账号信息"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/settings_next"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="修改密码"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/settings_next"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <!--推送消息的padding和其他的不一样-->
+                <FrameLayout
+                    android:id="@+id/fl_settings_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="推送消息"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:button="@drawable/cb_settings_bg"
+                        android:checked="true"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_opinion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="意见反馈"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/settings_next"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="关于我们"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@drawable/settings_next"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="推荐给朋友"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_settings_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:text="检查更新"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/font_red_lightred"/>
+
+                    <TextView
+                        android:id="@+id/tv_settings_version"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="2.0.0"
+                        android:textSize="@dimen/font_tiny"
+                        android:textColor="@color/main_gray"/>
+
+                </FrameLayout>
+
+                <!--android:layout_marginBottom="4dp"-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/settings_line_red"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_settings_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/ll_settings_actions"
+                android:layout_above="@+id/tv_settings_exit"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo_settings"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/logo_en"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_settings_exit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                android:background="@color/main_red"
+                android:clickable="true"
+                android:text="退出当前账号"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/main_white"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--确定要退出-->
+    <RelativeLayout
+        android:id="@+id/rl_settings_exit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_loadingbg">
+
+        <!--android:visibility="invisible"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:text="退出当前账号会删除该用户的\n所有数据哟！真的确定要退出么?\n"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/main_white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_settings_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="确定退出"
+                android:textSize="@dimen/font_big"
+                android:textColor="@color/font_red_white"/>
+
+            <Button
+                android:id="@+id/btn_settings_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/btn_cardedit_bg"
+                android:clickable="true"
+                android:text="乖乖回去"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/main_white"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

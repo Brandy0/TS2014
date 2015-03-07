@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tv_search_hot"
+    android:background="@drawable/round_box_9_bg"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:text="goods"
+    android:textSize="@dimen/font_small"
+    android:textColor="@color/font_red_white"/>

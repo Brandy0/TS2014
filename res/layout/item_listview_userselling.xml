@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp">
+
+    <!--内容部分-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/item_listview_goods"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_goods_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+
+            <LinearLayout
+                android:id="@+id/ll_goods_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_goods_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:singleLine="true"
+                    android:text="title"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_red"
+                    android:textSize="@dimen/font_tiny"/>
+
+                <ImageButton
+                    android:id="@+id/ib_goods_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:src="@drawable/btn_more_bg"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rl_goods_priceaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="4dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_goods_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:text="price"
+                    android:textStyle="bold"
+                    android:textColor="@color/main_red"
+                    android:textSize="@dimen/font_small"/>
+
+                <ImageView
+                    android:id="@+id/iv_goods_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/item_goods_new"/>
+
+                <ImageView
+                    android:id="@+id/iv_goods_bargin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/item_goods_bargin"/>
+
+                <!--这里做了精简，将两个LinearLayout换成一个RelativeLayout，否则报错java.lang.StackOverflowError-->
+                <!--类似地方的其他界面并没有改，因为没有出现这种情况，如果出现的话也可以用这种方式修改-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_goods_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:drawableLeft="@drawable/clock_small"
+                        android:drawablePadding="4dp"
+                        android:text="time"
+                        android:textColor="@color/main_red"
+                        android:textSize="@dimen/font_tinysmall"/>
+
+                    <TextView
+                        android:id="@+id/tv_goods_collectnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_goods_time"
+                        android:layout_toLeftOf="@+id/tv_goods_commentnum"
+                        android:drawableLeft="@drawable/item_favorite_bg"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="4dp"
+                        android:text="10"
+                        android:textColor="@color/main_red"
+                        android:textSize="@dimen/font_tinysmall"/>
+
+                    <TextView
+                        android:id="@+id/tv_goods_commentnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/tv_goods_time"
+                        android:layout_alignRight="@+id/tv_goods_time"
+                        android:drawablePadding="4dp"
+                        android:drawableLeft="@drawable/item_comment_bg"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="6dp"
+                        android:text="10"
+                        android:textColor="@color/main_red"
+                        android:textSize="@dimen/font_tinysmall"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_goods_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_goods_info"
+                android:layout_above="@+id/rl_goods_priceaction"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:singleLine="false"
+                android:maxLines="3"
+                android:text="content"
+                android:textColor="@color/main_gray"
+                android:textSize="@dimen/font_tinysmall"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--删除和编辑部分-->
+    <FrameLayout
+        android:id="@+id/fl_goods_actions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="@drawable/item_listview_actionbg">
+
+        <ImageButton
+            android:id="@+id/ib_goods_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            android:background="@drawable/close_bg"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_goods_delete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/delete_red_bg"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"
+                android:text="删除"
+                android:textColor="@color/font_red_lightred"
+                android:textSize="@dimen/font_middle"/>
+
+            <TextView
+                android:id="@+id/tv_goods_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/edit_red_bg"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="10dp"
+                android:clickable="true"
+                android:text="编辑"
+                android:textColor="@color/font_red_lightred"
+                android:textSize="@dimen/font_middle"/>
+
+            <TextView
+                android:id="@+id/tv_goods_sold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/userinfo_sold_active"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="10dp"
+                android:clickable="true"
+                android:text="已售"
+                android:textColor="@color/font_red_lightred"
+                android:textSize="@dimen/font_middle"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

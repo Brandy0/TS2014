@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayout_frame_loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgcolor"
+    android:gravity="center"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!--某些界面并没有处理当显示加载等待界面时其他界面隐藏的操作，所以这里给加载界面一个背景，如果想要去掉，要找到引用的相关界面进行上面的操作-->
+    <!--android:background="@color/main_bgcolor"-->
+
+    <ImageView
+        android:id="@+id/imageview_frame_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@anim/frame_loading_new"/>
+
+    <TextView
+        android:id="@+id/textview_frame_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="false"
+        android:text="数据加载中\n请您等待片刻..."
+        android:textColor="@color/main_gray"
+        android:textSize="@dimen/font_small"/>
+
+</LinearLayout>

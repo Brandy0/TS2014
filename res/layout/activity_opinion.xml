@@ -1,0 +1,81 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.activity.ActivityOpinion">
+
+    <!--标题部分-->
+    <FrameLayout
+        android:id="@+id/fl_opinion_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_title_top"
+        android:paddingBottom="@dimen/padding_title_bottom"
+        android:paddingLeft="@dimen/padding_title_left"
+        android:paddingRight="@dimen/padding_title_right"
+        android:background="@color/main_white">
+
+        <ImageButton
+            android:id="@+id/ib_opinion_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_return_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="意见反馈"
+            android:textColor="@color/main_red"
+            android:textSize="@dimen/font_title"/>
+
+        <TextView
+            android:id="@+id/tv_opinion_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="提交"
+            android:textColor="@color/font_red_lightred"
+            android:textSize="@dimen/font_small"/>
+
+    </FrameLayout>
+
+    <!--分隔符-->
+    <View
+        android:id="@+id/view_opinion_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/fl_opinion_title"
+        android:background="@color/main_lightred"/>
+
+    <!--android:background="@android:color/transparent"-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_opinion_divider">
+
+        <EditText
+            android:id="@+id/et_opinion_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:layout_margin="4dp"
+            android:inputType="textMultiLine"
+            android:gravity="start"
+            android:hint="亲，有什么要对我们说的么?"
+            android:textColorHint="@color/main_lightgray"
+            android:textSize="@dimen/font_tiny"
+            android:textColor="@color/main_gray"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgcolor"
+    tools:context="com.erhuoapp.erhuo.fragment.FragmentUserFavorite">
+
+    <!--注意：这个界面不能是其他Layout然后嵌套FrameLayout，否则StackOverflowError-->
+    <!--Layout嵌套层数最好不要超过5层，否则就会报错StackOverflowError-->
+    <!--收藏商品列表-->
+    <!--下拉刷新组件，我略微修改了第三方组件，这里的属性设置能够生效-->
+    <com.erhuoapp.erhuo.view.refresh.PullToRefreshListView
+        android:id="@+id/lv_userinfo_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:fadingEdgeLength="0dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="2dp"
+        android:clickable="true"/>
+
+    <include layout="@layout/frame_loading"/>
+
+</FrameLayout>

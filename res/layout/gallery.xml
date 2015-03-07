@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgcolor"
+    android:paddingTop="10dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!--调整了部分margin参数发现效果不好，不知道为什么还是这组参数设置效果最好，但是没法做到选择框放在图片右上角出去一点点，只能在右上角里面-->
+        <GridView
+            android:id="@+id/gridGallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginBottom="-10dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-10dp"
+            android:layout_marginRight="-10dp"
+            android:horizontalSpacing="-15dp"
+            android:verticalSpacing="-15dp"
+            android:padding="0dp"
+            android:numColumns="3"
+            android:listSelector="@android:color/transparent"
+            tools:listitem="@layout/gallery_item">
+        </GridView>
+
+        <ImageView
+            android:id="@+id/imgNoMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/no_media"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@color/main_white"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:text="已选 0 张图片"
+            android:textSize="@dimen/font_middle"
+            android:textColor="@color/main_red"/>
+
+        <Button
+            android:id="@+id/btnGalleryOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/btn_gallery_next_bg"
+            android:text="确定"
+            android:textColor="@color/main_white"
+            android:textSize="@dimen/font_middle"/>
+    </LinearLayout>
+
+</LinearLayout>

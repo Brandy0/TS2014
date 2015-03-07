@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:orientation="vertical">
+
+    <!--因为浅红色背景的缘故上面的LinearLayout使用的是margin而不是padding-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_listview_goods"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <!--用户信息部分-->
+        <!--通过设置圆角背景搞定了这里的浅红色背景-->
+        <LinearLayout
+            android:id="@+id/ll_goods_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_buying_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_goods_header"
+                android:layout_width="@dimen/size_header_small"
+                android:layout_height="@dimen/size_header_small"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:src="@drawable/header_default"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/ll_goods_noauthinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_goods_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="username"
+                        android:textStyle="bold"
+                        android:textColor="@color/main_red"
+                        android:textSize="@dimen/font_small"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_goods_dist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="distance"
+                            android:textColor="@color/main_lightred"
+                            android:textSize="@dimen/font_tinysmall"/>
+
+                        <TextView
+                            android:id="@+id/tv_goods_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="time"
+                            android:textColor="@color/main_lightred"
+                            android:textSize="@dimen/font_tinysmall"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/ll_goods_authinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="@dimen/size_header_small"
+                            android:layout_height="@dimen/size_header_small"
+                            android:src="@drawable/userinfo_auth"/>
+
+                        <TextView
+                            android:id="@+id/tv_goods_auth_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:paddingLeft="16dp"
+                            android:singleLine="true"
+                            android:text="username"
+                            android:textStyle="bold"
+                            android:textColor="@color/main_red"
+                            android:textSize="@dimen/font_tiny"/>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="60dp"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_goods_auth_dist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="distance"
+                            android:textColor="@color/main_lightred"
+                            android:textSize="@dimen/font_tinysmall"/>
+
+                        <TextView
+                            android:id="@+id/tv_goods_auth_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="time"
+                            android:textColor="@color/main_lightred"
+                            android:textSize="@dimen/font_tinysmall"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/ib_goods_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/item_comment_bg"/>
+
+                    <TextView
+                        android:id="@+id/tv_goods_commentnum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="4dp"
+                        android:text="10"
+                        android:textColor="@color/main_gray"
+                        android:textSize="@dimen/font_tinysmall"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--标题和内容部分-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/tv_goods_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/tv_goods_price"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:text="title"
+                android:textStyle="bold"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_small"/>
+
+            <TextView
+                android:id="@+id/tv_goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="price"
+                android:textStyle="bold"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_small"/>
+
+            <!--给它设置了最多显示2行-->
+            <TextView
+                android:id="@+id/tv_goods_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_goods_name"
+                android:layout_marginTop="4dp"
+                android:singleLine="false"
+                android:maxLines="2"
+                android:clickable="true"
+                android:text="content\ncontent"
+                android:textColor="@color/main_gray"
+                android:textSize="@dimen/font_tiny"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

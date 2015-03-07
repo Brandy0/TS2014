@@ -1,0 +1,221 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.activity.ActivityBuying">
+
+    <!--真实内容-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--标题部分-->
+        <FrameLayout
+            android:id="@+id/fl_buying_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_title_top"
+            android:paddingBottom="@dimen/padding_title_bottom"
+            android:paddingLeft="@dimen/padding_title_left"
+            android:paddingRight="@dimen/padding_title_right"
+            android:background="@color/main_white">
+
+            <ImageButton
+                android:id="@+id/ib_buying_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_return_bg"/>
+
+            <TextView
+                android:id="@+id/tv_buying_title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="发布求购"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_title"/>
+
+            <TextView
+                android:id="@+id/tv_buying_publish"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:text="发布"
+                android:textColor="@color/font_red_lightred"
+                android:textSize="@dimen/font_small"/>
+
+        </FrameLayout>
+
+        <!--分隔符-->
+        <View
+            android:id="@+id/view_buying_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/fl_buying_title"
+            android:background="@color/main_lightred"/>
+
+        <!--中间部分-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_buying_divider"
+            android:background="@color/main_white"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_buying_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/buying_update_red"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_buying_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/cb_buying_bg"
+                        android:checked="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:text="更新我的位置信息"
+                        android:textSize="@dimen/font_tinysmall"
+                        android:textColor="@color/main_white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:drawableLeft="@drawable/buying_bookmark"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="物品标题"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_red"/>
+
+                    <EditText
+                        android:id="@+id/et_buying_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_gray"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_lightgray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:drawableLeft="@drawable/buying_price"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="价　　位"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_red"/>
+
+                    <EditText
+                        android:id="@+id/et_buying_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:inputType="number"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_gray"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/main_lightgray"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/buying_content"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="描　　述"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_red"/>
+
+                    <EditText
+                        android:id="@+id/et_buying_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/transparent"
+                        android:inputType="textMultiLine"
+                        android:hint="简单描述下你要求购什么吧(70字以内)"
+                        android:textColorHint="@color/main_lightgray"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_gray"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+    <!--等待界面-->
+    <include layout="@layout/frame_waiting"/>
+
+</FrameLayout>

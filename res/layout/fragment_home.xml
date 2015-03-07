@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bgcolor">
+
+    <!--首页内容部分-->
+    <LinearLayout
+        android:id="@+id/ll_home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--标题-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/main_red">
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="left|center_vertical"-->
+                <!--android:gravity="center"-->
+                <!--android:text="贰货"-->
+                <!--android:textColor="@color/main_white"-->
+                <!--android:textSize="@dimen/font_title"/>-->
+
+            <!--由汉字变成图片-->
+            <ImageView
+                android:id="@+id/char_logo_erhuo"
+                android:layout_width="38dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:layout_gravity="left|center_vertical"
+                android:background="@drawable/logo_register"/>
+
+            <EditText
+                android:id="@+id/et_home_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="搜索贰货"
+                android:textSize="@dimen/font_small"
+                android:textColorHint="@color/main_lightgray"
+                android:paddingLeft="10dp"
+                android:textColor="@color/main_lightgray"
+                android:focusable="false"
+                android:background="@drawable/search_box"/>
+
+            <ImageButton
+                android:id="@+id/ib_home_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/home_search_bg"/>
+
+        </FrameLayout>
+
+        <!--标题下面的内容-->
+        <!--正常显示部分，让推荐商品和类别列表高度均分-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_home_focus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <!--小圆点，需要后台填充数据-->
+                <LinearLayout
+                    android:id="@+id/ll_focus_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="40dp"
+                    android:orientation="horizontal"
+                    android:background="@android:color/transparent"/>
+
+                <!--焦点图信息-->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_vertical"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="#7fd6615e">
+
+                    <TextView
+                        android:id="@+id/tv_focus_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:text=" "
+                        android:textSize="16sp"
+                        android:textColor="@color/main_white"/>
+
+                    <TextView
+                        android:id="@+id/tv_focus_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:text=" "
+                        android:textSize="16sp"
+                        android:textColor="@color/main_white"/>
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <!--商品类别，需要后台填充数据-->
+            <!--android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <!--android:gravity="center" 水平居中-->
+                <!--android:layout_gravity="center"  垂直居中-->
+                <GridView
+                    android:id="@+id/gridview_home_classify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@color/main_bgcolor"
+                    android:fadingEdge="none"
+                    android:horizontalSpacing="-15dp"
+                    android:verticalSpacing="-15dp"
+                    android:padding="0dp"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/item_gridview_classify"/>
+                <!--stretchMode 默认应该是 columnWidth-->
+                <!--使用 spacingWidthUniform 不错，考虑不同的水平和垂直间距就好 -->
+                <!--使用spacingWidthUniform的话小屏幕手机显示有问题-->
+                <!--小屏幕手机使用columnWidth较好-->
+                <!--大屏幕手机使用spacingWidthUniform并且水平垂直间距调大点8dp较好-->
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--数据加载界面-->
+    <!--它放置的位置还有待确定-->
+    <include layout="@layout/frame_loading"/>
+
+    <!--商品类别列表界面-->
+    <include layout="@layout/fragment_classify"/>
+
+</FrameLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--为了测试SlidingMenu用的，测试结果是SlidingMenu的滑动级别可以很细-->
+    <!--如果加上button的话，滑动会发生在button之上的那部分，底部的button不会滑动-->
+    <!--<Button-->
+    <!--android:id="@+id/btn_main_demo"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:text="demo"-->
+    <!--android:textColor="@drawable/font_red_white"-->
+    <!--android:background="@drawable/btn_register_bg"/>-->
+
+    <com.erhuoapp.erhuo.view.SlidingMenu
+        android:id="@+id/slidingMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

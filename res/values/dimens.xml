@@ -1,0 +1,62 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--font size-->
+
+    <dimen name="font_title">18sp</dimen>
+
+    <!--<dimen name="font_large">26sp</dimen>-->
+    <!--<dimen name="font_big">24sp</dimen>-->
+    <!--<dimen name="font_middle">20sp</dimen>-->
+    <!--<dimen name="font_small">18sp</dimen>-->
+    <!--<dimen name="font_tiny">16sp</dimen>-->
+    <!--<dimen name="font_tinysmall">12sp</dimen>-->
+    <!--<dimen name="font_tinytiny">10sp</dimen>-->
+
+    <dimen name="font_large">20sp</dimen>
+    <dimen name="font_big">18sp</dimen>
+    <dimen name="font_middle">16sp</dimen>
+    <dimen name="font_small">14sp</dimen>
+    <dimen name="font_tiny">15sp</dimen>
+    <dimen name="font_tinysmall">13sp</dimen>
+    <dimen name="font_tinytiny">8sp</dimen>
+
+    <!--title bar padding-->
+    <dimen name="padding_title_left">10dp</dimen>
+    <dimen name="padding_title_right">10dp</dimen>
+    <dimen name="padding_title_top">8dp</dimen>
+    <dimen name="padding_title_bottom">8dp</dimen>
+
+    <!--user header size-->
+    <dimen name="size_header_small">40dp</dimen>
+    <dimen name="size_header_middle">60dp</dimen>
+    <dimen name="size_header_large">100dp</dimen>
+    <dimen name="width_gridview_classify">70dp</dimen>
+    <dimen name="height_gridview_classify">90dp</dimen>
+    <dimen name="size_gridview_classify">40dp</dimen>
+
+    <!--photo size-->
+    <dimen name="photo_width">110dp</dimen>
+    <dimen name="photo_height">110dp</dimen>
+
+    <!--image size-->
+    <dimen name="image_width_selling">90dp</dimen>
+    <dimen name="image_height_selling">90dp</dimen>
+
+    
+       <dimen name="height_top_bar">46dp</dimen>
+    <dimen name="padding_search_bar">5dp</dimen>
+    <dimen name="height_row_weixin">59dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="field_textsize">14sp</dimen>
+    <dimen name="field_margin_right">5dp</dimen>
+    <dimen name="call_button_padding_vertical">10dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="call_button_padding_right">25dp</dimen>
+    <dimen name="sidebar_text_size">10dp</dimen>
+     <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+</resources>

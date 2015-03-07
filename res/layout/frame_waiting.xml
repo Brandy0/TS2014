@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayout_frame_waiting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_loadingbg"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageview_frame_waiting"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    <TextView
+        android:id="@+id/textview_frame_waiting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:singleLine="false"
+        android:text="请等待..."
+        android:textColor="@color/main_white"
+        android:textSize="20sp"/>
+
+</LinearLayout>

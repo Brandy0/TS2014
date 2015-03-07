@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayout_classify"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <!--android:layout_width="@dimen/width_gridview_classify"
+    android:layout_height="@dimen/height_gridview_classify"-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/home_gridview_itembg"
+        android:orientation="vertical">
+
+        <!--需要适配 大屏幕长宽为wrap_content，文字大小要变大-->
+        <ImageView
+            android:id="@+id/imageview_classify"
+            android:layout_width="@dimen/size_gridview_classify"
+            android:layout_height="@dimen/size_gridview_classify"/>
+
+        <TextView
+            android:id="@+id/textview_classify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:singleLine="true"
+            android:text="other"
+            android:textColor="@color/main_gray"
+            android:textSize="@dimen/font_tiny"/>
+
+    </LinearLayout>
+
+</LinearLayout>

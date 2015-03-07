@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
+
+    <ImageView
+        android:id="@+id/iv_comment_header"
+        android:layout_width="@dimen/size_header_small"
+        android:layout_height="@dimen/size_header_small"
+        android:src="@drawable/header_default"
+        android:layout_gravity="top"
+        android:padding="2dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_comment_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="name"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_small"
+                android:textColor="@color/main_red"/>
+
+            <TextView
+                android:id="@+id/tv_comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:text="time"
+                android:textSize="@dimen/font_tiny"
+                android:textColor="@color/main_lightred"/>
+
+        </LinearLayout>
+
+        <!--android:maxLines="3"-->
+        <TextView
+            android:id="@+id/tv_comment_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+            android:singleLine="false"
+            android:text="content"
+            android:textSize="@dimen/font_tiny"
+            android:textColor="@color/main_gray"/>
+
+    </LinearLayout>
+
+</LinearLayout>

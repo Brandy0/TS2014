@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.activity.ActivityAuth">
+
+    <!--核心内容-->
+    <RelativeLayout
+        android:id="@+id/rl_card_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--标题部分-->
+        <FrameLayout
+            android:id="@+id/fl_card_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_title_top"
+            android:paddingBottom="@dimen/padding_title_bottom"
+            android:paddingLeft="@dimen/padding_title_left"
+            android:paddingRight="@dimen/padding_title_right"
+            android:background="@color/main_white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="用户认证"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_title"/>
+
+            <TextView
+                android:id="@+id/tv_card_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:gravity="bottom"
+                android:clickable="true"
+                android:text="跳过"
+                android:textColor="@color/font_red_white"
+                android:textSize="@dimen/font_small"/>
+        </FrameLayout>
+
+        <!--标题下的内容部分-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fl_card_title">
+
+            <!--原始内容-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="60dp"
+                android:background="@color/main_red">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="扫描学生证　登入你的学校信息"
+                    android:textColor="@color/main_white"
+                    android:textSize="@dimen/font_small"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/logo_card"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="扫描学生证便可以成为认证用户\n 享受XXXXXXX"
+                    android:textColor="@color/main_brightgray"
+                    android:textSize="@dimen/font_small"/>
+
+                <Button
+                    android:id="@+id/btn_card_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_red_white_bg"
+                    android:text="扫　描"
+                    android:textSize="@dimen/font_small"
+                    android:textColor="@color/font_white_red"/>
+
+            </LinearLayout>
+
+
+            <!--点击扫描选择操作-->
+
+            <FrameLayout
+                android:id="@+id/fl_card_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_loadingbg">
+
+                <ImageButton
+                    android:id="@+id/ib_photo_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/close_bg"
+                    android:background="@android:color/transparent"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_photo_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/camera_white"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/circle_red_bg"/>
+
+                    <ImageView
+                        android:id="@+id/iv_photo_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:src="@drawable/gallery_white"
+                        android:scaleType="centerInside"
+                        android:background="@drawable/circle_red_bg"/>
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!--点击跳过看到的内容-->
+
+            <RelativeLayout
+                android:id="@+id/rl_card_skip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_loadingbg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="扫描学生证登入学校信息会\n 使你成为贰货的认证用户\n 会增加交易的成功率哦\n 真的确定要跳过吗？"
+                    android:textSize="@dimen/font_small"
+                    android:textColor="@color/main_white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="60dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_card_confirm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="确定跳过"
+                        android:textSize="@dimen/font_big"
+                        android:textColor="@color/font_red_white"/>
+
+                    <Button
+                        android:id="@+id/btn_card_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/btn_cardedit_bg"
+                        android:clickable="true"
+                        android:text="乖乖填写"
+                        android:textSize="@dimen/font_small"
+                        android:textColor="@color/main_white"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!--选择或者拍照得到的图片-->
+    <RelativeLayout
+        android:id="@+id/rl_card_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_red">
+
+        <FrameLayout
+            android:id="@+id/fl_card_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/ib_photo_return"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/camera_return"/>
+
+        </FrameLayout>
+
+        <!--填充到组件大小 fitXY-->
+        <ImageView
+            android:id="@+id/iv_card_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/fl_card_actions"
+            android:layout_above="@+id/btn_card_upload"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"/>
+
+        <Button
+            android:id="@+id/btn_card_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_red_white_bg"
+            android:text="确定上传"
+            android:textSize="@dimen/font_small"
+            android:textColor="@color/font_white_red"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/frame_waiting" />
+
+</FrameLayout>

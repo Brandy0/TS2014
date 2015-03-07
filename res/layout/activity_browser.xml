@@ -1,0 +1,68 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.activity.ActivityBrowser">
+
+    <!--标题部分-->
+    <FrameLayout
+        android:id="@+id/fl_browser_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_title_top"
+        android:paddingBottom="@dimen/padding_title_bottom"
+        android:paddingLeft="@dimen/padding_title_left"
+        android:paddingRight="@dimen/padding_title_right"
+        android:background="@color/main_white">
+
+        <ImageButton
+            android:id="@+id/ib_browser_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_return_bg"/>
+
+        <TextView
+            android:id="@+id/tv_browser_title"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="贰货"
+            android:textColor="@color/main_red"
+            android:textSize="@dimen/font_title"/>
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/ib_goods_share"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right|center_vertical"-->
+        <!--android:background="@drawable/btn_share_bg"/>-->
+
+    </FrameLayout>
+
+    <!--分隔符-->
+    <View
+        android:id="@+id/view_browser_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/fl_browser_title"
+        android:background="@color/main_lightred"/>
+
+    <FrameLayout
+        android:id="@+id/fl_browser_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_browser_divider">
+
+        <WebView
+            android:id="@+id/wv_browser_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+</RelativeLayout>

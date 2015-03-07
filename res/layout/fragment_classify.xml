@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_home_classify"
+    android:orientation="vertical">
+
+    <!--android:visibility="invisible"-->
+
+    <!--标题-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_title_top"
+        android:paddingBottom="@dimen/padding_title_bottom"
+        android:paddingLeft="@dimen/padding_title_left"
+        android:paddingRight="@dimen/padding_title_right"
+        android:background="@color/main_white">
+
+        <ImageButton
+            android:id="@+id/ib_classify_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/class_btn_bg"/>
+
+        <TextView
+            android:id="@+id/tv_classify_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:gravity="center"
+            android:text="商品类别"
+            android:textColor="@color/main_red"
+            android:textSize="@dimen/font_title"/>
+
+        <ImageButton
+            android:id="@+id/ib_classify_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@android:color/transparent"
+            android:src="@drawable/class_search_bg"/>
+
+    </FrameLayout>
+
+    <!--作为分隔行-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_lightred"/>
+
+    <!--排序方式 1:1:1.2:1.4-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_white"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_classify_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="时间"
+            android:textColor="@color/font_gray_red"
+            android:textSize="@dimen/font_small"/>
+
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/main_divider"/>
+
+        <Button
+            android:id="@+id/btn_classify_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="距离"
+            android:textColor="@color/font_gray_red"
+            android:textSize="@dimen/font_small"/>
+
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/main_divider"/>
+
+        <LinearLayout
+            android:id="@+id/ll_classify_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_classify_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="6dp"
+                android:clickable="true"
+                android:text="价格"
+                android:textColor="@color/font_gray_red"
+                android:textSize="@dimen/font_small"/>
+
+            <ImageView
+                android:id="@+id/iv_classify_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_normal"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/main_divider"/>
+
+        <Button
+            android:id="@+id/btn_classify_auth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.4"
+            android:background="@drawable/credit_user_gray"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <!--商品列表-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" >
+
+        <!--下拉刷新组件，我略微修改了第三方组件，这里的属性设置能够生效-->
+        <com.erhuoapp.erhuo.view.refresh.PullToRefreshListView
+            android:id="@+id/lv_refresh_classify_special"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdgeLength="0dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:clickable="true"
+            android:background="@color/main_bgcolor"/>
+
+        <include layout="@layout/frame_loading"/>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,246 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.erhuoapp.erhuo.fragment.FragmentPhone">
+
+    <!--内容部分-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_red">
+
+        <!--标题部分-->
+        <FrameLayout
+            android:id="@+id/fl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_title_top"
+            android:paddingBottom="@dimen/padding_title_bottom"
+            android:paddingLeft="@dimen/padding_title_left"
+            android:paddingRight="@dimen/padding_title_right"
+            android:background="@color/main_white">
+
+            <ImageButton
+                android:id="@+id/ib_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_return_bg"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="注 册"
+                android:textColor="@color/main_red"
+                android:textSize="@dimen/font_title"/>
+
+        </FrameLayout>
+
+        <!--分隔符-->
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/fl_title"
+            android:background="@color/main_lightred"/>
+
+        <!--内容部分-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_divider"
+            android:id="@+id/container_register">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo_register"
+                android:layout_marginTop="40dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_logo"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="手机号"
+                    android:textSize="@dimen/font_middle"
+                    android:textColor="@color/main_white"/>
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/main_white"
+                    android:inputType="number"
+                    android:drawableLeft="@drawable/phone"
+                    android:drawablePadding="10dp"
+                    android:background="@drawable/et_phone"
+                    android:hint="请输入您的手机号"
+                    android:textColorHint="@color/main_darkwhite"/>
+
+                <!--暂时不需要这个错误提示，直接toast显示消息-->
+                <TextView
+                    android:id="@+id/tv_phone_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/warning"
+                    android:drawablePadding="10dp"
+                    android:text="ERROR"
+                    android:textColor="@color/main_yellow"
+                    android:textSize="@dimen/font_middle"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="验证码"
+                    android:textSize="@dimen/font_middle"
+                    android:textColor="@color/main_white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_code"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="10dp"
+                        android:textColor="@color/main_white"
+                        android:inputType="number"
+                        android:drawableLeft="@drawable/lock2_active"
+                        android:drawablePadding="10dp"
+                        android:background="@drawable/et_phone"
+                        android:hint="输入验证码"
+                        android:textColorHint="@color/main_darkwhite"/>
+
+                    <Button
+                        android:id="@+id/btn_phone_sendcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/btn_white_red_bg"
+                        android:text="发送验证码"
+                        android:textSize="@dimen/font_middle"
+                        android:textColor="@color/font_red_white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_phone_validate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/btn_red_white_bg"
+                android:text="验 证"
+                android:textSize="@dimen/font_middle"
+                android:textColor="@color/font_white_red"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--等待界面-->
+    <include layout="@layout/frame_waiting"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_pwd_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ef000000">
+
+        <ImageButton
+            android:id="@+id/ib_pwd_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_return_bg"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_pwd_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/phone_pwd"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_middle"
+                android:textColor="@color/main_red"/>
+
+            <EditText
+                android:id="@+id/et_pwd_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/main_white"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/lock2_active"
+                android:drawablePadding="10dp"
+                android:background="@drawable/et_phone"
+                android:hint="请输入您的密码"
+                android:textColorHint="@color/main_darkwhite"/>
+
+            <Button
+                android:id="@+id/btn_pwd_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="确 定"
+                android:textSize="@dimen/font_middle"
+                android:textColor="@color/main_white"
+                android:background="@drawable/btn_red"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
